@@ -11,9 +11,12 @@ export default function Page() {
       </header>
 
       <Link href="/posts/asked-for-headphones-what-is-this">
-        <article className="cursor-pointer border border-zinc-800 rounded-lg p-6 hover:border-zinc-600 transition">
-          <h2 className="text-lg font-medium">
-            ▶ I asked for headphones — what is this?
+        <article className="group cursor-pointer border border-zinc-800 rounded-lg p-6 hover:border-zinc-600 transition">
+          <h2 className="text-lg font-medium flex items-center gap-2">
+            <span className="inline-block transition-transform duration-300 group-hover:rotate-90">
+              ▶
+            </span>
+            I asked for headphones — what is this?
           </h2>
 
           <p className="mt-1 text-sm text-zinc-500">Feb 1, 2026</p>
