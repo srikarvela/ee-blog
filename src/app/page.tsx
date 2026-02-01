@@ -1,88 +1,29 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
 
-type Post = {
-  title: string;
-  date: string;
-  description: string;
-  slug: string;
-};
-
-const POSTS: Post[] = [
-  {
-    title: "I asked for headphones — what is this?",
-    date: "Feb 1, 2026",
-    description: "An EE-first encounter with IEMs, impedance, and why audio suddenly clicked.",
-    slug: "asked-for-headphones-what-is-this",
-  },
-];
-
-export default function Home() {
-  const [query, setQuery] = useState("");
-
-  const filteredPosts = POSTS.filter((post) =>
-    post.title.toLowerCase().includes(query.toLowerCase()) ||
-    post.description.toLowerCase().includes(query.toLowerCase())
-  );
-
+export default function Page() {
   return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Header */}
-      <header className="border-b border-zinc-800">
-        <div className="mx-auto max-w-4xl px-6 py-8">
-          <h1 className="text-2xl font-semibold tracking-tight">
-            Srikar Velavarthipati —{" "}
-            <span className="text-red-500 animate-pulse drop-shadow-[0_0_8px_rgba(239,68,68,0.9)]">
-              EE Blog
-            </span>
-          </h1>
-        </div>
+    <main className="mx-auto max-w-3xl px-6 py-20">
+      <header className="mb-12">
+        <h1 className="text-2xl font-semibold tracking-tight">
+          Srikar Velavarthipati —{" "}
+          <span className="text-red-500">EE Blog</span>
+        </h1>
       </header>
 
-      {/* Search */}
-      <section className="mx-auto max-w-4xl px-6 py-10">
-        <input
-          type="text"
-          placeholder="Search posts"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          className="w-full bg-black border border-zinc-700 px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-zinc-400"
-        />
-      </section>
+      <Link href="/posts/asked-for-headphones-what-is-this">
+        <article className="cursor-pointer border border-zinc-800 rounded-lg p-6 hover:border-zinc-600 transition">
+          <h2 className="text-lg font-medium">
+            ▶ I asked for headphones — what is this?
+          </h2>
 
-      {/* Posts */}
-      <main className="mx-auto max-w-4xl px-6">
-        {filteredPosts.length === 0 && (
-          <p className="text-sm text-zinc-500">No posts found.</p>
-        )}
+          <p className="mt-1 text-sm text-zinc-500">Feb 1, 2026</p>
 
-        {filteredPosts.map((post, index) => (
-          <Link href={`/posts/${post.slug}`} key={index}>
-            <article
-              className="border-t border-zinc-800 py-8 cursor-pointer hover:bg-zinc-950 transition"
-            >
-              <h2 className="text-lg font-medium hover:underline">
-                ▶ {post.title}
-              </h2>
-              <p className="mt-1 text-sm text-zinc-500">{post.date}</p>
-              <p className="mt-2 text-sm text-zinc-400">
-                {post.description}
-              </p>
-            </article>
-          </Link>
-        ))}
-      </main>
-
-      {/* Footer */}
-      <footer className="border-t border-zinc-800 mt-16">
-        <div className="mx-auto max-w-4xl px-6 py-6 text-sm text-zinc-500 flex gap-4">
-          <a href="#" className="hover:underline">LinkedIn</a>
-          <a href="mailto:your@email.com" className="hover:underline">Email</a>
-          <span className="opacity-50">Portfolio (later)</span>
-        </div>
-      </footer>
-    </div>
+          <p className="mt-3 text-sm text-zinc-400">
+            An EE-first encounter with IEMs, impedance, and why audio suddenly
+            clicked.
+          </p>
+        </article>
+      </Link>
+    </main>
   );
 }
