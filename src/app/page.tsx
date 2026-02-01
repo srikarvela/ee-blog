@@ -1,18 +1,21 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 type Post = {
   title: string;
   date: string;
   description: string;
+  slug: string;
 };
 
 const POSTS: Post[] = [
   {
-    title: "I cannot use AirPods anymore after this....",
+    title: "I asked for headphones — what is this?",
     date: "Feb 1, 2026",
-    description: "Exploring the world of IEMs",
+    description: "An EE-first encounter with IEMs, impedance, and why audio suddenly clicked.",
+    slug: "asked-for-headphones-what-is-this",
   },
 ];
 
@@ -56,18 +59,19 @@ export default function Home() {
         )}
 
         {filteredPosts.map((post, index) => (
-          <article
-            key={index}
-            className="border-t border-zinc-800 py-8 cursor-pointer hover:bg-zinc-950 transition"
-          >
-            <h2 className="text-lg font-medium hover:underline">
-              ▶ {post.title}
-            </h2>
-            <p className="mt-1 text-sm text-zinc-500">{post.date}</p>
-            <p className="mt-2 text-sm text-zinc-400">
-              {post.description}
-            </p>
-          </article>
+          <Link href={`/posts/${post.slug}`} key={index}>
+            <article
+              className="border-t border-zinc-800 py-8 cursor-pointer hover:bg-zinc-950 transition"
+            >
+              <h2 className="text-lg font-medium hover:underline">
+                ▶ {post.title}
+              </h2>
+              <p className="mt-1 text-sm text-zinc-500">{post.date}</p>
+              <p className="mt-2 text-sm text-zinc-400">
+                {post.description}
+              </p>
+            </article>
+          </Link>
         ))}
       </main>
 
