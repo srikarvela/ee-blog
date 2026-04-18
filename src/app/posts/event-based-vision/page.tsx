@@ -205,6 +205,72 @@ export default function Page() {
           until something moves.
         </p>
 
+        <h3 className="mt-10 text-lg font-semibold tracking-tight text-white">
+          Event-Camera SLAM
+        </h3>
+
+        <p>
+          One of the most compelling applications is simultaneous localization and mapping —
+          SLAM. Traditional visual SLAM pipelines stall in low light or during fast motion
+          because frames blur and feature tracking breaks down. Event cameras sidestep both
+          problems: there's no exposure time to cause blur, and the microsecond timestamps
+          let the system track edges through aggressive rotations and velocity changes that
+          would completely defeat a frame-based tracker.
+        </p>
+
+        <p>
+          The pipeline works by treating the incoming event stream as a continuous source of
+          edge information. Events cluster along moving contours in the scene, so the system
+          tracks those contours over time to estimate camera pose, then fuses the pose
+          estimates into a map — without ever waiting for a frame boundary.
+        </p>
+
+        <div className="mt-6">
+          <Image
+            src="/images/posts/event-based-vision/event_slam_pipeline.svg"
+            alt="Event-camera SLAM pipeline diagram"
+            width={800}
+            height={450}
+            className="rounded-md w-full"
+          />
+          <p className="mt-2 text-xs italic text-zinc-500 text-center">
+            The event-camera SLAM loop: raw events feed into pose tracking and map updates continuously, with no frame synchronization required.
+          </p>
+        </div>
+
+        <h3 className="mt-10 text-lg font-semibold tracking-tight text-white">
+          Optical Flow via Time Surfaces
+        </h3>
+
+        <p>
+          Estimating optical flow — the per-pixel velocity field across a scene — is where
+          event cameras particularly shine. The standard approach with frames computes flow
+          by comparing intensity values between two exposures, which means any motion faster
+          than the frame interval produces aliasing or blur.
+        </p>
+
+        <p>
+          The time-surface method replaces that entirely. For each pixel, a time surface
+          stores the timestamp of the most recent event at that location. The result is a
+          2D map where recent activity is bright and older activity has decayed — a local
+          memory of where motion just was. Optical flow is then computed by finding how
+          those surfaces shift over small time windows, giving you a dense velocity estimate
+          that updates with every incoming event rather than once per frame.
+        </p>
+
+        <div className="mt-6">
+          <Image
+            src="/images/posts/event-based-vision/event_optical_flow_time_surface.svg"
+            alt="Time-surface optical flow diagram"
+            width={800}
+            height={450}
+            className="rounded-md w-full"
+          />
+          <p className="mt-2 text-xs italic text-zinc-500 text-center">
+            A time surface encodes recency of events per pixel. Shifting that surface over a short window yields optical flow without frames.
+          </p>
+        </div>
+
         <p>
           Neuromorphic computing research is another natural fit. Event cameras produce data
           that maps directly onto spiking neural network inputs — same sparse, asynchronous,
