@@ -10,6 +10,24 @@ export default function Page() {
         </h1>
       </header>
 
+      <Link href="/posts/exploring-iems">
+        <article className="group cursor-pointer border border-zinc-800 rounded-lg p-6 hover:border-zinc-600 transition">
+          <h2 className="text-lg font-medium flex items-center gap-2">
+            <span className="inline-block transition-transform duration-300 group-hover:rotate-90">
+              ▶
+            </span>
+            Exploring IEMs
+          </h2>
+
+          <p className="mt-1 text-sm text-zinc-500">Jun 24, 2026</p>
+
+          <p className="mt-3 text-sm text-zinc-400">
+            Driver types, crossover design, acoustic tuning, and why your source's output
+            impedance shapes what you actually hear.
+          </p>
+        </article>
+      </Link>
+
       <Link href="/posts/event-based-vision">
         <article className="group cursor-pointer border border-zinc-800 rounded-lg p-6 hover:border-zinc-600 transition">
           <h2 className="text-lg font-medium flex items-center gap-2">
