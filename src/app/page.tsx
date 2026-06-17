@@ -22,8 +22,8 @@ export default function Page() {
           <p className="mt-1 text-sm text-zinc-500">Jun 24, 2026</p>
 
           <p className="mt-3 text-sm text-zinc-400">
-            Driver types, crossover design, acoustic tuning, and why your source's output
-            impedance shapes what you actually hear.
+            Three lenses on in-ear monitors — the technical seal-and-driver story, what
+            performers actually report, and how the pros measure and tune them.
           </p>
         </article>
       </Link>

@@ -1,0 +1,41 @@
+<svg viewBox="0 0 800 430" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif">
+  <rect width="800" height="430" fill="#0a0a0a"/>
+  <text x="400" y="38" text-anchor="middle" fill="#fafafa" font-size="22" font-weight="600">Floor Wedges vs. In-Ear Monitoring</text>
+
+  <!-- LEFT: floor wedge -->
+  <text x="200" y="76" text-anchor="middle" fill="#a1a1aa" font-size="15" font-weight="600">Floor wedge monitors</text>
+  <!-- performer -->
+  <circle cx="200" cy="150" r="16" fill="#27272a" stroke="#52525b" stroke-width="2"/>
+  <path d="M200 166 L200 215 M200 180 L178 205 M200 180 L222 205 M200 215 L184 250 M200 215 L216 250" stroke="#52525b" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- wedge speaker -->
+  <path d="M150 300 L250 300 L235 265 L165 265 Z" fill="#18181b" stroke="#ef5350" stroke-width="2"/>
+  <circle cx="200" cy="283" r="10" fill="#0a0a0a" stroke="#ef5350" stroke-width="1.5"/>
+  <!-- loud sound waves -->
+  <path d="M200 258 Q200 245 200 235" stroke="#ef5350" stroke-width="2" fill="none"/>
+  <path d="M170 262 Q150 230 158 200" stroke="#ef5350" stroke-width="2" fill="none" opacity="0.7"/>
+  <path d="M230 262 Q250 230 242 200" stroke="#ef5350" stroke-width="2" fill="none" opacity="0.7"/>
+  <text x="200" y="338" text-anchor="middle" fill="#ef5350" font-size="12">loud on stage · feedback risk</text>
+  <text x="200" y="372" text-anchor="middle" fill="#71717a" font-size="12">Tied to one spot · clutters stage</text>
+  <text x="200" y="392" text-anchor="middle" fill="#71717a" font-size="12">High SPL → hearing fatigue</text>
+
+  <!-- divider -->
+  <line x1="400" y1="86" x2="400" y2="410" stroke="#27272a" stroke-width="1.5" stroke-dasharray="2 6"/>
+
+  <!-- RIGHT: IEM -->
+  <text x="600" y="76" text-anchor="middle" fill="#bf00ff" font-size="15" font-weight="600">In-ear monitors</text>
+  <circle cx="600" cy="150" r="16" fill="#27272a" stroke="#bf00ff" stroke-width="2"/>
+  <!-- iem in ear dot -->
+  <circle cx="588" cy="150" r="3.5" fill="#bf00ff"/>
+  <path d="M600 166 L600 215 M600 180 L578 205 M600 180 L622 205 M600 215 L584 250 M600 215 L616 250" stroke="#52525b" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- wireless pack on belt -->
+  <rect x="610" y="196" width="16" height="22" rx="3" fill="#27272a" stroke="#bf00ff" stroke-width="1.5"/>
+  <!-- signal to ear -->
+  <path d="M618 196 Q610 170 592 154" stroke="#bf00ff" stroke-width="2" fill="none" stroke-dasharray="4 3"/>
+  <!-- freedom arrows -->
+  <path d="M520 300 L545 300 M545 300 L538 294 M545 300 L538 306" stroke="#22c55e" stroke-width="2" fill="none"/>
+  <path d="M680 300 L655 300 M655 300 L662 294 M655 300 L662 306" stroke="#22c55e" stroke-width="2" fill="none"/>
+  <text x="600" y="305" text-anchor="middle" fill="#22c55e" font-size="12">move freely</text>
+  <text x="600" y="338" text-anchor="middle" fill="#22c55e" font-size="12">personal mix · no feedback</text>
+  <text x="600" y="372" text-anchor="middle" fill="#a1a1aa" font-size="12">Lower, safer levels · clean stage</text>
+  <text x="600" y="392" text-anchor="middle" fill="#a1a1aa" font-size="12">Tradeoff: isolated, solitary feel</text>
+</svg>

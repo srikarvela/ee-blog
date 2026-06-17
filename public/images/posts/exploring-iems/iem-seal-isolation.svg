@@ -1,0 +1,40 @@
+<svg viewBox="0 0 800 440" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif">
+  <rect width="800" height="440" fill="#0a0a0a"/>
+  <text x="400" y="38" text-anchor="middle" fill="#fafafa" font-size="22" font-weight="600">Why the Seal Changes Everything</text>
+
+  <!-- LEFT: loose earbud -->
+  <text x="200" y="78" text-anchor="middle" fill="#a1a1aa" font-size="15" font-weight="600">Loose earbud</text>
+  <!-- ear canal cross-section -->
+  <path d="M120 150 Q150 110 220 120 L300 150 Q330 200 300 250 L220 280 Q150 290 120 250 Z" fill="#18181b" stroke="#3f3f46" stroke-width="2"/>
+  <path d="M300 150 L360 165 Q380 200 360 235 L300 250 Q330 200 300 150 Z" fill="#0f0f10" stroke="#27272a" stroke-width="1.5"/>
+  <text x="345" y="205" text-anchor="middle" fill="#52525b" font-size="11">canal</text>
+  <!-- earbud sitting loosely -->
+  <circle cx="245" cy="200" r="34" fill="#27272a" stroke="#ef5350" stroke-width="2"/>
+  <circle cx="245" cy="200" r="14" fill="#0a0a0a" stroke="#52525b" stroke-width="1.5"/>
+  <!-- leak gaps -->
+  <path d="M215 175 q-18 8 -28 26" fill="none" stroke="#ef5350" stroke-width="2" stroke-dasharray="3 4"/>
+  <path d="M218 226 q-20 -6 -30 -22" fill="none" stroke="#ef5350" stroke-width="2" stroke-dasharray="3 4"/>
+  <!-- sound leaking out / noise in arrows -->
+  <text x="200" y="330" text-anchor="middle" fill="#ef5350" font-size="12">bass leaks out ↘</text>
+  <text x="200" y="352" text-anchor="middle" fill="#ef5350" font-size="12">outside noise leaks in ↗</text>
+  <text x="200" y="392" text-anchor="middle" fill="#71717a" font-size="12.5">Air gap → thin bass, poor isolation,</text>
+  <text x="200" y="410" text-anchor="middle" fill="#71717a" font-size="12.5">sound changes every time you move</text>
+
+  <!-- divider -->
+  <line x1="400" y1="90" x2="400" y2="420" stroke="#27272a" stroke-width="1.5" stroke-dasharray="2 6"/>
+
+  <!-- RIGHT: sealed IEM -->
+  <text x="600" y="78" text-anchor="middle" fill="#bf00ff" font-size="15" font-weight="600">Sealed IEM</text>
+  <path d="M520 150 Q550 110 620 120 L700 150 Q730 200 700 250 L620 280 Q550 290 520 250 Z" fill="#18181b" stroke="#3f3f46" stroke-width="2"/>
+  <path d="M700 150 L760 165 Q780 200 760 235 L700 250 Q730 200 700 150 Z" fill="#0f0f10" stroke="#27272a" stroke-width="1.5"/>
+  <!-- IEM nozzle + tip fully sealing canal -->
+  <ellipse cx="660" cy="200" rx="20" ry="40" fill="#bf00ff" opacity="0.18"/>
+  <path d="M640 165 L705 178 Q725 200 705 222 L640 235 Q625 200 640 165 Z" fill="#27272a" stroke="#bf00ff" stroke-width="2"/>
+  <rect x="600" y="184" width="44" height="32" rx="8" fill="#27272a" stroke="#bf00ff" stroke-width="2"/>
+  <circle cx="585" cy="200" r="22" fill="#18181b" stroke="#52525b" stroke-width="1.5"/>
+  <!-- contained sound -->
+  <text x="600" y="330" text-anchor="middle" fill="#22c55e" font-size="12">bass stays in the canal ✓</text>
+  <text x="600" y="352" text-anchor="middle" fill="#22c55e" font-size="12">up to ~30 dB noise blocked ✓</text>
+  <text x="600" y="392" text-anchor="middle" fill="#a1a1aa" font-size="12.5">Airtight seal → full bass, isolation,</text>
+  <text x="600" y="410" text-anchor="middle" fill="#a1a1aa" font-size="12.5">repeatable sound session to session</text>
+</svg>
