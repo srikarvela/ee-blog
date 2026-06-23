@@ -1,0 +1,47 @@
+<svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif">
+  <rect width="800" height="420" fill="#0a0a0a"/>
+  <text x="400" y="36" text-anchor="middle" fill="#fafafa" font-size="22" font-weight="600">What Lossy Compression Does to the Signal</text>
+
+  <!-- PANEL A: wired / lossless -->
+  <rect x="40" y="64" width="720" height="140" rx="10" fill="#0f0f10" stroke="#27272a" stroke-width="1.5"/>
+  <text x="58" y="88" fill="#22c55e" font-size="13" font-weight="600">Wired / lossless — the full waveform</text>
+  <line x1="60" y1="140" x2="740" y2="140" stroke="#27272a" stroke-width="1"/>
+  <!-- rich, detailed waveform (fundamental + harmonics) -->
+  <path d="M60 140
+    C 95 96 110 96 130 140 C 150 184 165 184 185 140
+    C 205 104 215 118 235 140 C 258 168 270 150 290 140
+    C 320 92 335 100 360 140 C 382 176 398 168 420 140
+    C 445 102 458 114 480 140 C 502 166 518 158 540 140
+    C 568 100 582 108 605 140 C 626 170 642 162 665 140
+    C 690 108 705 112 740 140"
+    fill="none" stroke="#22c55e" stroke-width="2.2"/>
+  <text x="740" y="196" text-anchor="end" fill="#52525b" font-size="10.5">every wiggle preserved — bit-for-bit</text>
+
+  <!-- PANEL B: bluetooth lossy -->
+  <rect x="40" y="224" width="720" height="150" rx="10" fill="#0f0f10" stroke="#27272a" stroke-width="1.5"/>
+  <text x="58" y="248" fill="#bf00ff" font-size="13" font-weight="600">Bluetooth (lossy codec) — original vs. reconstruction</text>
+  <line x1="60" y1="306" x2="740" y2="306" stroke="#27272a" stroke-width="1"/>
+  <!-- faint original -->
+  <path d="M60 306
+    C 95 262 110 262 130 306 C 150 350 165 350 185 306
+    C 205 270 215 284 235 306 C 258 334 270 316 290 306
+    C 320 258 335 266 360 306 C 382 342 398 334 420 306
+    C 445 268 458 280 480 306 C 502 332 518 324 540 306
+    C 568 266 582 274 605 306 C 626 336 642 328 665 306
+    C 690 274 705 278 740 306"
+    fill="none" stroke="#52525b" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.8"/>
+  <!-- reconstructed: smoother, small detail discarded -->
+  <path d="M60 306
+    C 96 268 112 268 132 306 C 152 344 167 344 187 306
+    C 210 278 222 290 244 306 C 268 330 280 314 300 306
+    C 332 266 348 272 372 306 C 396 340 412 332 434 306
+    C 458 274 470 286 492 306 C 514 328 530 322 552 306
+    C 580 272 594 280 616 306 C 636 332 652 326 672 306
+    C 698 280 712 282 740 306"
+    fill="none" stroke="#bf00ff" stroke-width="2.2"/>
+  <!-- markers for discarded detail -->
+  <circle cx="290" cy="306" r="3" fill="#ef5350"/>
+  <circle cx="540" cy="306" r="3" fill="#ef5350"/>
+  <text x="58" y="366" fill="#71717a" font-size="10.5">dashed = original · solid = what the codec sends · red dots = fine detail discarded to fit the radio link</text>
+  <text x="740" y="366" text-anchor="end" fill="#bf00ff" font-size="10.5">close, but not identical</text>
+</svg>

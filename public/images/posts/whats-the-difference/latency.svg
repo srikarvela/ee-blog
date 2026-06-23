@@ -1,0 +1,58 @@
+<svg viewBox="0 0 800 430" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif">
+  <rect width="800" height="430" fill="#0a0a0a"/>
+  <text x="400" y="36" text-anchor="middle" fill="#fafafa" font-size="22" font-weight="600">Latency: Why Wired Still Wins for Sync</text>
+  <text x="400" y="58" text-anchor="middle" fill="#71717a" font-size="12.5">Approximate end-to-end audio delay (varies by device and conditions)</text>
+
+  <!-- axis -->
+  <line x1="180" y1="90" x2="180" y2="378" stroke="#3f3f46" stroke-width="1.5"/>
+  <line x1="180" y1="378" x2="745" y2="378" stroke="#3f3f46" stroke-width="1.5"/>
+  <g fill="#52525b" font-size="10" text-anchor="middle">
+    <text x="180" y="394">0</text>
+    <text x="307" y="394">50</text>
+    <text x="434" y="394">100</text>
+    <text x="561" y="394">150</text>
+    <text x="688" y="394">200 ms</text>
+  </g>
+
+  <!-- lip-sync threshold ~100ms -->
+  <line x1="434" y1="90" x2="434" y2="378" stroke="#ef5350" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.7"/>
+  <text x="438" y="104" fill="#ef5350" font-size="10.5">~100 ms: lip-sync drift becomes noticeable</text>
+
+  <!-- bars: y, label, width(px), color, valuelabel -->
+  <!-- Wired -->
+  <text x="170" y="125" text-anchor="end" fill="#d4d4d8" font-size="12.5">Wired (analog)</text>
+  <rect x="180" y="113" width="5" height="20" rx="3" fill="#22c55e"/>
+  <text x="195" y="128" fill="#22c55e" font-size="11">~0 ms</text>
+
+  <!-- LC3 -->
+  <text x="170" y="159" text-anchor="end" fill="#d4d4d8" font-size="12.5">LC3 (BT LE Audio)</text>
+  <rect x="180" y="147" width="76" height="20" rx="3" fill="#a78bfa"/>
+  <text x="266" y="162" fill="#a1a1aa" font-size="11">~30 ms</text>
+
+  <!-- aptX LL -->
+  <text x="170" y="193" text-anchor="end" fill="#d4d4d8" font-size="12.5">aptX Low Latency</text>
+  <rect x="180" y="181" width="102" height="20" rx="3" fill="#a78bfa"/>
+  <text x="292" y="196" fill="#a1a1aa" font-size="11">~40 ms</text>
+
+  <!-- aptX -->
+  <text x="170" y="227" text-anchor="end" fill="#d4d4d8" font-size="12.5">aptX Classic</text>
+  <rect x="180" y="215" width="178" height="20" rx="3" fill="#bf00ff"/>
+  <text x="368" y="230" fill="#a1a1aa" font-size="11">~70 ms</text>
+
+  <!-- SBC -->
+  <text x="170" y="261" text-anchor="end" fill="#d4d4d8" font-size="12.5">SBC</text>
+  <rect x="180" y="249" width="382" height="20" rx="3" fill="#bf00ff"/>
+  <text x="572" y="264" fill="#a1a1aa" font-size="11">~150 ms</text>
+
+  <!-- AAC -->
+  <text x="170" y="295" text-anchor="end" fill="#d4d4d8" font-size="12.5">AAC (AirPods)</text>
+  <rect x="180" y="283" width="509" height="20" rx="3" fill="#ef5350"/>
+  <text x="699" y="298" fill="#a1a1aa" font-size="11">~200 ms</text>
+
+  <!-- LDAC -->
+  <text x="170" y="329" text-anchor="end" fill="#d4d4d8" font-size="12.5">LDAC (hi-res)</text>
+  <rect x="180" y="317" width="509" height="20" rx="3" fill="#ef5350"/>
+  <text x="699" y="332" fill="#a1a1aa" font-size="11">~200 ms</text>
+
+  <text x="180" y="416" fill="#52525b" font-size="11">Music listening hides this; gaming, video, and live monitoring do not. Wired analog has effectively none.</text>
+</svg>
