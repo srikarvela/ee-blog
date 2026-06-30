@@ -1,0 +1,55 @@
+<svg viewBox="0 0 800 440" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif">
+  <rect width="800" height="440" fill="#0a0a0a"/>
+  <text x="400" y="40" text-anchor="middle" fill="#fafafa" font-size="22" font-weight="600">Anatomy of an Order</text>
+  <text x="400" y="62" text-anchor="middle" fill="#71717a" font-size="12.5">The single instruction every market is built out of</text>
+
+  <!-- order ticket card -->
+  <rect x="280" y="110" width="240" height="230" rx="12" fill="#18181b" stroke="#1f9bff" stroke-width="2"/>
+  <rect x="280" y="110" width="240" height="40" rx="12" fill="#1f9bff" opacity="0.14"/>
+  <text x="400" y="136" text-anchor="middle" fill="#1f9bff" font-size="14" font-weight="700" letter-spacing="1">ORDER TICKET</text>
+
+  <!-- rows -->
+  <text x="300" y="182" fill="#71717a" font-size="11">SIDE</text>
+  <rect x="300" y="190" width="64" height="24" rx="12" fill="#34d399"/>
+  <text x="332" y="207" text-anchor="middle" fill="#0a0a0a" font-size="12" font-weight="700">BUY</text>
+
+  <text x="300" y="240" fill="#71717a" font-size="11">SIZE</text>
+  <text x="300" y="262" fill="#e4e4e7" font-size="16" font-weight="600">100</text>
+  <text x="345" y="262" fill="#71717a" font-size="11">shares</text>
+
+  <text x="300" y="294" fill="#71717a" font-size="11">PRICE (limit)</text>
+  <text x="300" y="316" fill="#e4e4e7" font-size="16" font-weight="600">$100.00</text>
+
+  <text x="430" y="240" fill="#71717a" font-size="11">TIME</text>
+  <text x="430" y="262" fill="#e4e4e7" font-size="13" font-weight="600">09:30:01</text>
+  <text x="430" y="278" fill="#71717a" font-size="10">.250300 s</text>
+
+  <!-- left callouts -->
+  <line x1="300" y1="202" x2="190" y2="178" stroke="#3f3f46" stroke-width="1.3"/>
+  <circle cx="300" cy="202" r="3" fill="#34d399"/>
+  <text x="30" y="166" fill="#34d399" font-size="12" font-weight="600">SIDE</text>
+  <text x="30" y="184" fill="#a1a1aa" font-size="11.5">Buy or sell — which</text>
+  <text x="30" y="200" fill="#a1a1aa" font-size="11.5">direction you&apos;re trading.</text>
+
+  <line x1="300" y1="256" x2="190" y2="262" stroke="#3f3f46" stroke-width="1.3"/>
+  <circle cx="300" cy="256" r="3" fill="#1f9bff"/>
+  <text x="30" y="252" fill="#1f9bff" font-size="12" font-weight="600">SIZE</text>
+  <text x="30" y="270" fill="#a1a1aa" font-size="11.5">Quantity — how many</text>
+  <text x="30" y="286" fill="#a1a1aa" font-size="11.5">units you want.</text>
+
+  <!-- right callouts -->
+  <line x1="500" y1="310" x2="610" y2="316" stroke="#3f3f46" stroke-width="1.3"/>
+  <circle cx="500" cy="310" r="3" fill="#1f9bff"/>
+  <text x="610" y="300" fill="#1f9bff" font-size="12" font-weight="600">PRICE</text>
+  <text x="610" y="318" fill="#a1a1aa" font-size="11.5">The limit: the worst</text>
+  <text x="610" y="334" fill="#a1a1aa" font-size="11.5">price you&apos;ll accept.</text>
+
+  <line x1="500" y1="258" x2="610" y2="200" stroke="#3f3f46" stroke-width="1.3"/>
+  <circle cx="500" cy="258" r="3" fill="#fbbf24"/>
+  <text x="610" y="170" fill="#fbbf24" font-size="12" font-weight="600">TIME</text>
+  <text x="610" y="188" fill="#a1a1aa" font-size="11.5">Arrival time. Ties at the</text>
+  <text x="610" y="204" fill="#a1a1aa" font-size="11.5">same price go to whoever</text>
+  <text x="610" y="220" fill="#a1a1aa" font-size="11.5">was first — time priority.</text>
+
+  <text x="400" y="392" text-anchor="middle" fill="#52525b" font-size="11.5">Side + size + price + time. That&apos;s the whole atom. Everything else in a market is millions of these, sorted.</text>
+</svg>

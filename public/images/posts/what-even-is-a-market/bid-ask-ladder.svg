@@ -1,0 +1,41 @@
+<svg viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif">
+  <rect width="800" height="460" fill="#0a0a0a"/>
+  <text x="400" y="40" text-anchor="middle" fill="#fafafa" font-size="22" font-weight="600">Bid, Ask, and the Spread</text>
+  <text x="400" y="62" text-anchor="middle" fill="#71717a" font-size="12.5">A snapshot of who wants to trade, and at what price</text>
+
+  <!-- column headers -->
+  <text x="250" y="96" text-anchor="end" fill="#52525b" font-size="11">price</text>
+  <text x="300" y="96" fill="#52525b" font-size="11">resting orders (size)</text>
+
+  <!-- ASKS (sellers) top, red -->
+  <text x="60" y="120" fill="#ef5350" font-size="13" font-weight="600">Asks — sellers</text>
+  <g font-size="12">
+    <text x="250" y="146" text-anchor="end" fill="#d4d4d8">$102.00</text>
+    <rect x="300" y="135" width="150" height="16" rx="3" fill="#ef5350" opacity="0.5"/>
+    <text x="250" y="170" text-anchor="end" fill="#d4d4d8">$101.50</text>
+    <rect x="300" y="159" width="90" height="16" rx="3" fill="#ef5350" opacity="0.5"/>
+    <text x="250" y="194" text-anchor="end" fill="#fafafa" font-weight="600">$101.00</text>
+    <rect x="300" y="183" width="120" height="16" rx="3" fill="#ef5350"/>
+    <text x="430" y="195" fill="#ef5350" font-size="11">best ask — you buy here</text>
+  </g>
+
+  <!-- spread gap -->
+  <rect x="60" y="212" width="680" height="40" rx="6" fill="#18181b" stroke="#3f3f46" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="75" y="237" fill="#bf00ff" font-size="13" font-weight="600">the spread = $101.00 − $100.00 = $1.00</text>
+  <text x="725" y="237" text-anchor="end" fill="#a1a1aa" font-size="11.5">mid-price = $100.50</text>
+
+  <!-- BIDS (buyers) bottom, green -->
+  <g font-size="12">
+    <text x="250" y="286" text-anchor="end" fill="#fafafa" font-weight="600">$100.00</text>
+    <rect x="300" y="275" width="135" height="16" rx="3" fill="#34d399"/>
+    <text x="445" y="287" fill="#34d399" font-size="11">best bid — you sell here</text>
+    <text x="250" y="310" text-anchor="end" fill="#d4d4d8">$99.50</text>
+    <rect x="300" y="299" width="80" height="16" rx="3" fill="#34d399" opacity="0.5"/>
+    <text x="250" y="334" text-anchor="end" fill="#d4d4d8">$99.00</text>
+    <rect x="300" y="323" width="160" height="16" rx="3" fill="#34d399" opacity="0.5"/>
+  </g>
+  <text x="60" y="360" fill="#34d399" font-size="13" font-weight="600">Bids — buyers</text>
+
+  <text x="400" y="410" text-anchor="middle" fill="#71717a" font-size="12">Buyers bid below, sellers ask above, and the gap between the best of each is the spread —</text>
+  <text x="400" y="430" text-anchor="middle" fill="#71717a" font-size="12">the small toll you pay to trade right now.</text>
+</svg>

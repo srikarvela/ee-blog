@@ -1,0 +1,52 @@
+<svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif">
+  <rect width="800" height="420" fill="#0a0a0a"/>
+  <text x="400" y="40" text-anchor="middle" fill="#fafafa" font-size="22" font-weight="600">When Does a Trade Happen?</text>
+
+  <!-- Buyer box -->
+  <rect x="60" y="76" width="280" height="92" rx="10" fill="#18181b" stroke="#34d399" stroke-width="2"/>
+  <text x="80" y="104" fill="#34d399" font-size="14" font-weight="600">Buyer</text>
+  <text x="80" y="128" fill="#a1a1aa" font-size="12.5">Wants to buy — but not at any price.</text>
+  <text x="80" y="152" fill="#e4e4e7" font-size="13">Will pay up to <tspan fill="#34d399" font-weight="600">$102</tspan></text>
+
+  <!-- Seller box -->
+  <rect x="460" y="76" width="280" height="92" rx="10" fill="#18181b" stroke="#ef5350" stroke-width="2"/>
+  <text x="480" y="104" fill="#ef5350" font-size="14" font-weight="600">Seller</text>
+  <text x="480" y="128" fill="#a1a1aa" font-size="12.5">Wants to sell — but not at any price.</text>
+  <text x="480" y="152" fill="#e4e4e7" font-size="13">Will accept from <tspan fill="#ef5350" font-weight="600">$98</tspan></text>
+
+  <!-- number line -->
+  <line x1="120" y1="300" x2="680" y2="300" stroke="#3f3f46" stroke-width="2"/>
+  <g font-size="11" fill="#52525b" text-anchor="middle">
+    <line x1="120" y1="295" x2="120" y2="305" stroke="#52525b" stroke-width="1.5"/>
+    <text x="120" y="322">$96</text>
+    <line x1="260" y1="295" x2="260" y2="305" stroke="#52525b" stroke-width="1.5"/>
+    <text x="260" y="322">$98</text>
+    <line x1="400" y1="295" x2="400" y2="305" stroke="#52525b" stroke-width="1.5"/>
+    <text x="400" y="322">$100</text>
+    <line x1="540" y1="295" x2="540" y2="305" stroke="#52525b" stroke-width="1.5"/>
+    <text x="540" y="322">$102</text>
+    <line x1="680" y1="295" x2="680" y2="305" stroke="#52525b" stroke-width="1.5"/>
+    <text x="680" y="322">$104</text>
+  </g>
+
+  <!-- buyer range: <= 102 -->
+  <line x1="120" y1="248" x2="540" y2="248" stroke="#34d399" stroke-width="3"/>
+  <line x1="540" y1="243" x2="540" y2="253" stroke="#34d399" stroke-width="3"/>
+  <text x="125" y="238" fill="#34d399" font-size="11">buyer OK ≤ $102</text>
+
+  <!-- seller range: >= 98 -->
+  <line x1="260" y1="352" x2="680" y2="352" stroke="#ef5350" stroke-width="3"/>
+  <line x1="260" y1="347" x2="260" y2="357" stroke="#ef5350" stroke-width="3"/>
+  <text x="675" y="372" fill="#ef5350" font-size="11" text-anchor="end">seller OK ≥ $98</text>
+
+  <!-- overlap / agreement zone 98..102 -->
+  <rect x="260" y="284" width="280" height="32" fill="#34d399" opacity="0.14"/>
+  <text x="400" y="200" text-anchor="middle" fill="#34d399" font-size="12.5" font-weight="600">Agreement zone: $98 – $102</text>
+  <text x="400" y="219" text-anchor="middle" fill="#71717a" font-size="11">any price in here works for both sides</text>
+
+  <!-- trade marker at 100 -->
+  <circle cx="400" cy="300" r="6" fill="#fafafa"/>
+  <line x1="400" y1="232" x2="400" y2="294" stroke="#fafafa" stroke-width="1.5" stroke-dasharray="3 3"/>
+  <rect x="352" y="252" width="96" height="26" rx="13" fill="#34d399"/>
+  <text x="400" y="269" text-anchor="middle" fill="#0a0a0a" font-size="12" font-weight="700">TRADE @ $100</text>
+</svg>

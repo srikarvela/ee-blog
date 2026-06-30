@@ -1,4 +1,4 @@
-export type Tag = "IEM";
+export type Tag = "IEM" | "QUANT" | "VISION";
 
 export type Post = {
   slug: string;
@@ -11,10 +11,20 @@ export type Post = {
 // Tailwind classes for each tag's chip. Add new tags here as topics grow.
 export const TAG_STYLES: Record<Tag, string> = {
   IEM: "border-yellow-400/40 bg-yellow-400/10 text-yellow-400",
+  QUANT: "border-[#1f9bff]/50 bg-[#1f9bff]/10 text-[#1f9bff]",
+  VISION: "border-[#c4b5fd]/50 bg-[#c4b5fd]/10 text-[#c4b5fd]",
 };
 
 // Newest first — order here is the display order.
 export const posts: Post[] = [
+  {
+    slug: "what-even-is-a-market",
+    title: "What Even Is a Market?",
+    date: "Jun 30, 2026",
+    blurb:
+      "Post one of a long climb toward trading hardware — starting where it has to start: buyers, sellers, price, and what actually happens when a trade happens.",
+    tags: ["QUANT"],
+  },
   {
     slug: "whats-the-difference",
     title: "What’s the Difference?",
@@ -37,7 +47,7 @@ export const posts: Post[] = [
     date: "Apr 8, 2026",
     blurb:
       "Instead of capturing frames, event cameras fire per-pixel signals the moment luminance changes — asynchronous, sparse, and microsecond-precise.",
-    tags: [],
+    tags: ["VISION"],
   },
   {
     slug: "asked-for-headphones-what-is-this",
