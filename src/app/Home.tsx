@@ -160,7 +160,7 @@ export default function Home() {
         >
           <h1
             ref={overlayRef}
-            className="whitespace-nowrap text-3xl font-semibold tracking-tight sm:text-5xl"
+            className="whitespace-nowrap text-[clamp(1.1rem,4.5vw,3rem)] font-semibold tracking-tight"
             style={overlayStyle}
           >
             {nodes}
