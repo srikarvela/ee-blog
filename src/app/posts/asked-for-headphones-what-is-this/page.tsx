@@ -10,6 +10,11 @@ export default function Page() {
       <p className="mt-2 text-sm text-zinc-500">Feb 1, 2026</p>
 
       <div className="mt-10 space-y-6 text-zinc-300 leading-relaxed">
+        <p className="text-sm text-zinc-500 italic">
+          Diary entry. The one where I open a box expecting headphones, find two tiny earpieces
+          and a wire, and tumble headfirst into audio hardware.
+        </p>
+
         <p>
           That was my exact reaction when I opened the box. No headband, no earcups —
           just two tiny things and a wire. I genuinely thought I got the wrong product.

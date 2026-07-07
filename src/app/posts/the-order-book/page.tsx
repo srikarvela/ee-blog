@@ -11,8 +11,8 @@ export default function Page() {
 
       <div className="mt-10 space-y-6 text-zinc-300 leading-relaxed">
         <p className="text-sm text-zinc-500 italic">
-          Diary entry, part two of the trading climb. Still learning out loud, still writing it
-          down as it clicks.
+          Diary entry. Part two of the trading climb, and the order book turns out to be a literal
+          data structure — I am far too excited about that.
         </p>
 
         <p>

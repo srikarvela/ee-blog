@@ -10,6 +10,11 @@ export default function Page() {
       <p className="mt-2 text-sm text-zinc-500">Jun 30, 2026</p>
 
       <div className="mt-10 space-y-6 text-zinc-300 leading-relaxed">
+        <p className="text-sm text-zinc-500 italic">
+          Diary entry. Day one of the trading climb, starting embarrassingly basic — what even
+          is a market, and what happens the moment a trade happens?
+        </p>
+
         <p>
           New direction for this blog. So far I&apos;ve been poking at hardware I could hold —
           IEMs, cameras, the physical stuff. But there&apos;s a corner of electrical engineering

@@ -10,6 +10,11 @@ export default function Page() {
       <p className="mt-2 text-sm text-zinc-500">Jun 24, 2026</p>
 
       <div className="mt-10 space-y-6 text-zinc-300 leading-relaxed">
+        <p className="text-sm text-zinc-500 italic">
+          Diary entry. Deeper into the IEM rabbit hole — driver types, what performers actually
+          feel on stage, and how the pros put real numbers on sound.
+        </p>
+
         <p>
           A few months after my first post on IEMs, I'm still in the rabbit hole — just
           deeper. What started as curiosity about why my AudioSense T800s sounded different

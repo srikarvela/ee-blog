@@ -11,8 +11,8 @@ export default function Page() {
 
       <div className="mt-10 space-y-6 text-zinc-300 leading-relaxed">
         <p className="text-sm text-zinc-500 italic">
-          Diary entry. Written the messy way — as I actually figured it out, not cleaned up
-          after the fact.
+          Diary entry. The night a chain of blocks finally clicked — hashes, fingerprints, and
+          the glue that welds them together.
         </p>
 
         <p>

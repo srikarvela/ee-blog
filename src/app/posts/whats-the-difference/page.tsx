@@ -72,6 +72,11 @@ export default function Page() {
       <p className="mt-2 text-sm text-zinc-500">Jun 26, 2026</p>
 
       <div className="mt-10 space-y-6 text-zinc-300 leading-relaxed">
+        <p className="text-sm text-zinc-500 italic">
+          Diary entry. Finally settling whether these are just fancy earbuds — pulling apart
+          IEMs, Bluetooth ANC, and wired headphones side by side.
+        </p>
+
         <p>
           By now I&apos;ve written a fair bit about IEMs. But every time I bring them up, the
           same question comes back: <em>aren&apos;t those just earbuds?</em> Fair — because

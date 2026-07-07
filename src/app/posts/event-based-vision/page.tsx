@@ -10,6 +10,11 @@ export default function Page() {
       <p className="mt-2 text-sm text-zinc-500">Apr 8, 2026</p>
 
       <div className="mt-10 space-y-6 text-zinc-300 leading-relaxed">
+        <p className="text-sm text-zinc-500 italic">
+          Diary entry. Trying to wrap my head around a camera that ignores frames entirely and
+          fires pixel by pixel, only when something actually moves.
+        </p>
+
         <p>
           A headline stopped me mid-scroll a few weeks ago: <em>"Boston Dynamics' new robot
           tracks a thrown object faster than any high-speed camera can."</em> The detail buried
