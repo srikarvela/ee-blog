@@ -1,10 +1,51 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { posts, allTags, TAG_STYLES, type Tag } from "./posts";
 
 type Filter = Tag | "All";
+
+// Fades + lifts its child into view the first time it enters the viewport.
+function Reveal({ children }: { children: React.ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [shown, setShown] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    // If the browser can't observe, just show it.
+    if (typeof IntersectionObserver === "undefined") {
+      setShown(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShown(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -12% 0px" }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className={`transition-all duration-700 ease-out motion-reduce:transition-none ${
+        shown ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+    >
+      {children}
+    </div>
+  );
+}
 
 export default function PostList() {
   const [filter, setFilter] = useState<Filter>("All");
@@ -97,7 +138,8 @@ export default function PostList() {
 
       <div className="space-y-6">
         {visible.map((post) => (
-          <Link key={post.slug} href={`/posts/${post.slug}`}>
+          <Reveal key={post.slug}>
+            <Link href={`/posts/${post.slug}`}>
             <article className="group cursor-pointer border border-zinc-800 rounded-lg p-6 hover:border-zinc-600 transition">
               <h2 className="text-lg font-medium flex items-center gap-2">
                 <span className="inline-block transition-transform duration-300 group-hover:rotate-90">
@@ -120,7 +162,8 @@ export default function PostList() {
 
               <p className="mt-3 text-sm text-zinc-400">{post.blurb}</p>
             </article>
-          </Link>
+            </Link>
+          </Reveal>
         ))}
       </div>
     </div>
