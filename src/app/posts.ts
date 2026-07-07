@@ -19,6 +19,14 @@ export const TAG_STYLES: Record<Tag, string> = {
 // Newest first — order here is the display order.
 export const posts: Post[] = [
   {
+    slug: "the-order-book",
+    title: "The Order Book: Where Trades Actually Match",
+    date: "Jul 7, 2026",
+    blurb:
+      "Journaling it live: bids, asks, the spread, limit vs. market orders, and the matching engine — the core data structure of every exchange.",
+    tags: ["QUANT"],
+  },
+  {
     slug: "blocks-hashes-glue",
     title: "Blocks, Hashes, and the Glue Between Them",
     date: "Jul 2, 2026",

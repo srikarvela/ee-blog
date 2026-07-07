@@ -1,0 +1,57 @@
+<svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif">
+  <rect width="800" height="520" fill="#0a0a0a"/>
+  <text x="400" y="36" text-anchor="middle" fill="#fafafa" font-size="22" font-weight="600">A Market Buy Walks the Book</text>
+  <text x="400" y="58" text-anchor="middle" fill="#71717a" font-size="12.5">Incoming order: BUY 250 @ market — it eats the asks, cheapest first.</text>
+
+  <!-- ask ladder on left -->
+  <text x="70" y="96" fill="#ef5350" font-size="12" font-weight="600">Ask side (before)</text>
+  <g font-size="13" font-family="ui-monospace, monospace">
+    <!-- level 1 best ask -->
+    <rect x="60" y="110" width="300" height="40" rx="6" fill="#ef5350" opacity="0.14" stroke="#ef5350" stroke-width="1.5"/>
+    <text x="76" y="128" fill="#fafafa">$100.02</text>
+    <text x="180" y="128" fill="#a1a1aa">size 100</text>
+    <text x="76" y="144" fill="#34d399" font-size="11">→ filled 100 (all)</text>
+    <!-- level 2 -->
+    <rect x="60" y="158" width="300" height="40" rx="6" fill="#ef5350" opacity="0.10" stroke="#3f3f46" stroke-width="1.2"/>
+    <text x="76" y="176" fill="#e4e4e7">$100.04</text>
+    <text x="180" y="176" fill="#a1a1aa">size 100</text>
+    <text x="76" y="192" fill="#34d399" font-size="11">→ filled 100 (all)</text>
+    <!-- level 3 -->
+    <rect x="60" y="206" width="300" height="40" rx="6" fill="#ef5350" opacity="0.06" stroke="#3f3f46" stroke-width="1.2"/>
+    <text x="76" y="224" fill="#e4e4e7">$100.06</text>
+    <text x="180" y="224" fill="#a1a1aa">size 200</text>
+    <text x="76" y="240" fill="#fbbf24" font-size="11">→ filled 50 (partial); 150 left resting</text>
+  </g>
+  <text x="70" y="272" fill="#71717a" font-size="11">Order needs 250: 100 + 100 + 50 = 250. Done.</text>
+
+  <!-- steps on right -->
+  <text x="430" y="96" fill="#1f9bff" font-size="13" font-weight="600">Price-time priority, step by step</text>
+  <g font-size="12">
+    <circle cx="440" cy="122" r="10" fill="#1f9bff"/><text x="440" y="126" text-anchor="middle" fill="#0a0a0a" font-size="11" font-weight="700">1</text>
+    <text x="460" y="119" fill="#e4e4e7" font-weight="600">Best price first</text>
+    <text x="460" y="136" fill="#a1a1aa">Take the cheapest ask ($100.02) before any other.</text>
+
+    <circle cx="440" cy="164" r="10" fill="#1f9bff"/><text x="440" y="168" text-anchor="middle" fill="#0a0a0a" font-size="11" font-weight="700">2</text>
+    <text x="460" y="161" fill="#e4e4e7" font-weight="600">Then the next level</text>
+    <text x="460" y="178" fill="#a1a1aa">That level is empty, so move up to $100.04.</text>
+
+    <circle cx="440" cy="206" r="10" fill="#fbbf24"/><text x="440" y="210" text-anchor="middle" fill="#0a0a0a" font-size="11" font-weight="700">3</text>
+    <text x="460" y="203" fill="#e4e4e7" font-weight="600">Partial fill</text>
+    <text x="460" y="220" fill="#a1a1aa">Only 50 more needed, so take 50 of the 200 at</text>
+    <text x="460" y="236" fill="#a1a1aa">$100.06. The other 150 stays resting.</text>
+
+    <circle cx="440" cy="264" r="10" fill="#1f9bff"/><text x="440" y="268" text-anchor="middle" fill="#0a0a0a" font-size="11" font-weight="700">4</text>
+    <text x="460" y="261" fill="#e4e4e7" font-weight="600">Within a level: oldest first</text>
+    <text x="460" y="278" fill="#a1a1aa">Ties at one price are filled in time order (FIFO).</text>
+  </g>
+
+  <!-- slippage box -->
+  <rect x="60" y="308" width="680" height="150" rx="10" fill="#0f0f10" stroke="#27272a" stroke-width="1.5"/>
+  <text x="80" y="334" fill="#ef5350" font-size="14" font-weight="600">The cost you didn&apos;t see coming: slippage</text>
+  <text x="80" y="360" fill="#a1a1aa" font-size="12.5">The best ask was $100.02 — but you only got 100 shares there. The rest cost more as you climbed.</text>
+  <text x="80" y="388" fill="#d4d4d8" font-size="12.5" font-family="ui-monospace, monospace">avg price = (100·100.02 + 100·100.04 + 50·100.06) / 250 = $100.036</text>
+  <text x="80" y="414" fill="#a1a1aa" font-size="12.5">You paid an average of $100.036, not $100.02. That $0.016 gap per share is slippage —</text>
+  <text x="80" y="434" fill="#a1a1aa" font-size="12.5">the price of demanding all 250 immediately from a book that wasn&apos;t deep enough at the top.</text>
+
+  <text x="400" y="492" text-anchor="middle" fill="#52525b" font-size="11.5">A big enough taker order &quot;walks up&quot; the book, and thin depth turns that walk into real money.</text>
+</svg>

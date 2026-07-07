@@ -1,0 +1,52 @@
+<svg viewBox="0 0 800 470" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif">
+  <rect width="800" height="470" fill="#0a0a0a"/>
+  <text x="400" y="36" text-anchor="middle" fill="#fafafa" font-size="22" font-weight="600">Two Ways to Send an Order</text>
+
+  <!-- divider -->
+  <line x1="400" y1="60" x2="400" y2="440" stroke="#27272a" stroke-width="1.5" stroke-dasharray="2 6"/>
+
+  <!-- ===== LEFT: LIMIT ===== -->
+  <text x="200" y="84" text-anchor="middle" fill="#34d399" font-size="15" font-weight="600">Limit order</text>
+  <text x="200" y="104" text-anchor="middle" fill="#a1a1aa" font-size="12">&quot;Buy 100 @ $100.00 — no higher.&quot;</text>
+
+  <rect x="60" y="120" width="280" height="150" rx="10" fill="#18181b" stroke="#3f3f46" stroke-width="1.5"/>
+  <text x="200" y="142" text-anchor="middle" fill="#71717a" font-size="10.5">if nobody sells that low yet…</text>
+  <!-- mini book: asks above, the resting bid -->
+  <g font-size="11.5" font-family="ui-monospace, monospace">
+    <text x="150" y="166" fill="#ef5350">$100.02  ask</text>
+    <text x="150" y="184" fill="#52525b">— spread —</text>
+    <rect x="140" y="192" width="120" height="20" rx="4" fill="#34d399" opacity="0.25" stroke="#34d399" stroke-width="1.5"/>
+    <text x="150" y="207" fill="#34d399">$100.00  YOU (resting)</text>
+    <text x="150" y="230" fill="#34d399" opacity="0.6">$99.98   bid</text>
+  </g>
+  <text x="200" y="256" text-anchor="middle" fill="#e4e4e7" font-size="12">…it RESTS in the book and waits.</text>
+
+  <rect x="90" y="292" width="220" height="34" rx="17" fill="#34d399" opacity="0.14" stroke="#34d399" stroke-width="1.5"/>
+  <text x="200" y="314" text-anchor="middle" fill="#34d399" font-size="13" font-weight="700">Adds liquidity → MAKER</text>
+  <text x="200" y="352" text-anchor="middle" fill="#a1a1aa" font-size="11.5">Price is guaranteed, execution is not:</text>
+  <text x="200" y="370" text-anchor="middle" fill="#a1a1aa" font-size="11.5">you might wait, or never fill at all.</text>
+
+  <!-- ===== RIGHT: MARKET ===== -->
+  <text x="600" y="84" text-anchor="middle" fill="#ef5350" font-size="15" font-weight="600">Market order</text>
+  <text x="600" y="104" text-anchor="middle" fill="#a1a1aa" font-size="12">&quot;Buy 100 right now — any price.&quot;</text>
+
+  <rect x="460" y="120" width="280" height="150" rx="10" fill="#18181b" stroke="#3f3f46" stroke-width="1.5"/>
+  <text x="600" y="142" text-anchor="middle" fill="#71717a" font-size="10.5">reaches across the spread immediately…</text>
+  <g font-size="11.5" font-family="ui-monospace, monospace">
+    <rect x="540" y="152" width="120" height="20" rx="4" fill="#ef5350" opacity="0.3" stroke="#ef5350" stroke-width="1.5"/>
+    <text x="550" y="167" fill="#ef5350">$100.02  ask ← taken</text>
+    <text x="550" y="188" fill="#52525b">— spread —</text>
+    <text x="550" y="210" fill="#34d399" opacity="0.6">$100.00  bid</text>
+  </g>
+  <!-- arrow crossing -->
+  <path d="M600 236 L600 176" stroke="#ef5350" stroke-width="2" fill="none" marker-end="url(#mk)"/>
+  <defs><marker id="mk" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto"><path d="M0,0 L6.5,3 L0,6 Z" fill="#ef5350"/></marker></defs>
+  <text x="600" y="256" text-anchor="middle" fill="#e4e4e7" font-size="12">…and fills against the best ask now.</text>
+
+  <rect x="490" y="292" width="220" height="34" rx="17" fill="#ef5350" opacity="0.14" stroke="#ef5350" stroke-width="1.5"/>
+  <text x="600" y="314" text-anchor="middle" fill="#ef5350" font-size="13" font-weight="700">Removes liquidity → TAKER</text>
+  <text x="600" y="352" text-anchor="middle" fill="#a1a1aa" font-size="11.5">Execution is guaranteed, price is not:</text>
+  <text x="600" y="370" text-anchor="middle" fill="#a1a1aa" font-size="11.5">you pay whatever the book is offering.</text>
+
+  <text x="400" y="418" text-anchor="middle" fill="#52525b" font-size="12">The whole trade-off in one line: a limit order picks the price and waits; a market order picks the speed and pays.</text>
+</svg>
