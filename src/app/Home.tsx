@@ -179,7 +179,7 @@ export default function Home() {
             }}
           >
             Srikar Velavarthipati —{" "}
-            <span className="text-red-500">EE Blog</span>
+            <span className="saber text-red-500">EE Blog</span>
           </h1>
         </header>
 
