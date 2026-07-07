@@ -20,12 +20,13 @@ type Phase = "idle" | "warp" | "type" | "settle" | "reveal";
 export default function Home() {
   const [phase, setPhase] = useState<Phase>("idle");
   const [typed, setTyped] = useState(0);
-  const [centered, setCentered] = useState<string | null>(null);
+  const [flip, setFlip] = useState<string | null>(null);
   const [starfieldOn, setStarfieldOn] = useState(false);
   const [starVisible, setStarVisible] = useState(false);
-  const titleRef = useRef<HTMLHeadingElement>(null);
+  const overlayRef = useRef<HTMLHeadingElement>(null);
+  const headerRef = useRef<HTMLHeadingElement>(null);
 
-  // Decide once on mount: skip (reduced motion / already played) or play.
+  // Decide once: skip (reduced motion / already played this session) or play.
   useEffect(() => {
     const reduce =
       typeof matchMedia !== "undefined" &&
@@ -40,16 +41,6 @@ export default function Home() {
       setPhase("reveal");
       return;
     }
-
-    // Measure the title's natural (header) rect, then build the transform
-    // that lifts it to screen-center and scales it up for the typing phase.
-    const el = titleRef.current;
-    if (el) {
-      const r = el.getBoundingClientRect();
-      const dx = window.innerWidth / 2 - (r.left + r.width / 2);
-      const dy = window.innerHeight / 2 - (r.top + r.height / 2);
-      setCentered(`translate(${dx}px, ${dy}px) scale(2)`);
-    }
     setStarfieldOn(true);
     setStarVisible(true);
     setPhase("warp");
@@ -63,14 +54,14 @@ export default function Home() {
     }, 450);
   }, []);
 
-  // Safety net: if RAF is throttled (background tab), force the warp to end.
+  // Safety net for throttled RAF (background tab).
   useEffect(() => {
     if (phase !== "warp") return;
     const id = window.setTimeout(handleWarpDone, WARP_MS + 1200);
     return () => window.clearTimeout(id);
   }, [phase, handleWarpDone]);
 
-  // Typing phase.
+  // Typing phase — crisp, at a real large font size.
   useEffect(() => {
     if (phase !== "type") return;
     let i = 0;
@@ -79,46 +70,59 @@ export default function Home() {
       setTyped(i);
       if (i >= FULL.length) {
         window.clearInterval(id);
-        window.setTimeout(() => setPhase("settle"), 250);
+        window.setTimeout(() => setPhase("settle"), 300);
       }
     }, 34);
     return () => window.clearInterval(id);
   }, [phase]);
 
-  // Settle -> reveal, and remember we've played for this session.
+  // Settle — measure the big centered title and the real header, then fly the
+  // overlay into the header slot (transform only during motion). Hand off to
+  // the real header (rendered crisp at text-2xl) once it lands.
   useEffect(() => {
     if (phase !== "settle") return;
+    const o = overlayRef.current;
+    const hdr = headerRef.current;
+    if (o && hdr) {
+      const or = o.getBoundingClientRect();
+      const hr = hdr.getBoundingClientRect();
+      const s = hr.width / or.width;
+      const dx = hr.left + hr.width / 2 - (or.left + or.width / 2);
+      const dy = hr.top + hr.height / 2 - (or.top + or.height / 2);
+      setFlip(`translate(${dx}px, ${dy}px) scale(${s})`);
+    }
     const id = window.setTimeout(() => {
       setPhase("reveal");
       try {
         sessionStorage.setItem("ee-intro-played", "1");
       } catch {}
-    }, 650);
+    }, 700);
     return () => window.clearTimeout(id);
   }, [phase]);
 
-  const titleShown = phase === "type" || phase === "settle" || phase === "reveal";
+  const overlayActive =
+    phase === "type" || phase === "settle" || phase === "reveal";
+  const overlayVisible = phase === "type" || phase === "settle";
 
-  const titleStyle: CSSProperties = {
-    display: "inline-block",
+  const overlayStyle: CSSProperties = {
     transformOrigin: "center center",
     willChange: "transform",
-    transform: phase === "type" ? centered ?? undefined : undefined,
-    transition: phase === "settle" ? "transform 650ms cubic-bezier(0.4,0,0.2,1)" : undefined,
-    opacity: titleShown ? 1 : 0,
+    transform: phase === "settle" || phase === "reveal" ? flip ?? "none" : "none",
+    transition:
+      phase === "settle" ? "transform 700ms cubic-bezier(0.4,0,0.2,1)" : undefined,
   };
 
-  const titleNodes: ReactNode[] = [];
   const chars = FULL.split("");
+  const nodes: ReactNode[] = [];
   chars.forEach((ch, i) => {
-    if (phase === "type" && i === typed) {
-      titleNodes.push(
+    if (i === typed && phase === "type") {
+      nodes.push(
         <span key="caret" className="animate-pulse text-zinc-400">
           |
         </span>
       );
     }
-    titleNodes.push(
+    nodes.push(
       <span
         key={i}
         className={i >= RED_START ? "text-red-500" : undefined}
@@ -129,7 +133,7 @@ export default function Home() {
     );
   });
   if (phase === "type" && typed >= chars.length) {
-    titleNodes.push(
+    nodes.push(
       <span key="caret-end" className="animate-pulse text-zinc-400">
         |
       </span>
@@ -148,14 +152,34 @@ export default function Home() {
         </div>
       )}
 
+      {overlayActive && (
+        <div
+          className="pointer-events-none fixed inset-0 z-[55] flex items-center justify-center overflow-hidden px-6 transition-opacity duration-300"
+          style={{ opacity: overlayVisible ? 1 : 0 }}
+          aria-hidden="true"
+        >
+          <h1
+            ref={overlayRef}
+            className="whitespace-nowrap text-3xl font-semibold tracking-tight sm:text-5xl"
+            style={overlayStyle}
+          >
+            {nodes}
+          </h1>
+        </div>
+      )}
+
       <main className="mx-auto max-w-3xl px-6 py-20">
         <header className="mb-12">
           <h1
-            ref={titleRef}
+            ref={headerRef}
             className="text-2xl font-semibold tracking-tight"
-            style={titleStyle}
+            style={{
+              opacity: phase === "reveal" ? 1 : 0,
+              transition: "opacity 500ms ease",
+            }}
           >
-            {titleNodes}
+            Srikar Velavarthipati —{" "}
+            <span className="text-red-500">EE Blog</span>
           </h1>
         </header>
 
