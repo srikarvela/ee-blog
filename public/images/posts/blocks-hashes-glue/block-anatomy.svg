@@ -1,0 +1,91 @@
+<svg viewBox="0 0 800 580" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif">
+  <rect width="800" height="580" fill="#0a0a0a"/>
+  <text x="400" y="36" text-anchor="middle" fill="#fafafa" font-size="22" font-weight="600">Anatomy of a Block (pulled apart)</text>
+
+  <defs>
+    <marker id="ba" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto"><path d="M0,0 L6.5,3 L0,6 Z" fill="#1f9bff"/></marker>
+  </defs>
+
+  <!-- title bar -->
+  <rect x="290" y="72" width="220" height="34" rx="8" fill="#1f9bff" opacity="0.16"/>
+  <text x="400" y="94" text-anchor="middle" fill="#1f9bff" font-size="14" font-weight="700">BLOCK #2</text>
+
+  <!-- HEADER box -->
+  <rect x="290" y="116" width="220" height="188" rx="8" fill="#18181b" stroke="#1f9bff" stroke-width="2"/>
+  <text x="300" y="136" fill="#71717a" font-size="10">HEADER — this is what gets hashed</text>
+  <g font-family="ui-monospace, monospace">
+    <text x="300" y="158" fill="#71717a" font-size="10" font-family="ui-sans-serif, sans-serif">prev hash</text>
+    <text x="300" y="174" fill="#34d399" font-size="12">a1f9…c2</text>
+    <text x="300" y="198" fill="#71717a" font-size="10" font-family="ui-sans-serif, sans-serif">merkle root</text>
+    <text x="300" y="214" fill="#d4d4d8" font-size="12">9c4d…af</text>
+    <text x="300" y="238" fill="#71717a" font-size="10" font-family="ui-sans-serif, sans-serif">timestamp</text>
+    <text x="300" y="254" fill="#d4d4d8" font-size="12">2026-07-07 21:14</text>
+    <text x="300" y="278" fill="#71717a" font-size="10" font-family="ui-sans-serif, sans-serif">nonce</text>
+    <text x="300" y="294" fill="#d4d4d8" font-size="12">0x41A9F3</text>
+  </g>
+
+  <!-- BODY box -->
+  <rect x="290" y="316" width="220" height="96" rx="8" fill="#18181b" stroke="#3f3f46" stroke-width="1.5"/>
+  <text x="300" y="336" fill="#71717a" font-size="10">BODY — the transactions</text>
+  <g font-family="ui-monospace, monospace" font-size="12" fill="#d4d4d8">
+    <text x="300" y="358">B pays C 3</text>
+    <text x="300" y="378">D pays E 7</text>
+    <text x="300" y="398" fill="#52525b">… more transactions</text>
+  </g>
+
+  <!-- arrow header -> block hash -->
+  <line x1="400" y1="412" x2="400" y2="452" stroke="#1f9bff" stroke-width="2" marker-end="url(#ba)"/>
+  <text x="412" y="440" fill="#71717a" font-size="10">SHA-256(header)</text>
+
+  <!-- Block hash box -->
+  <rect x="250" y="456" width="300" height="46" rx="8" fill="#0f0f10" stroke="#34d399" stroke-width="1.5"/>
+  <text x="400" y="475" text-anchor="middle" fill="#71717a" font-size="10">BLOCK HASH</text>
+  <text x="400" y="493" text-anchor="middle" fill="#34d399" font-size="13" font-family="ui-monospace, monospace">7b30…e8</text>
+
+  <!-- LEFT callouts -->
+  <line x1="290" y1="90" x2="250" y2="88" stroke="#3f3f46" stroke-width="1.2"/>
+  <circle cx="290" cy="90" r="3" fill="#1f9bff"/>
+  <text x="30" y="80" fill="#1f9bff" font-size="12" font-weight="600">Block height</text>
+  <text x="30" y="98" fill="#a1a1aa" font-size="11">Its number / position in</text>
+  <text x="30" y="114" fill="#a1a1aa" font-size="11">the chain.</text>
+
+  <line x1="290" y1="170" x2="250" y2="168" stroke="#3f3f46" stroke-width="1.2"/>
+  <circle cx="290" cy="170" r="3" fill="#34d399"/>
+  <text x="30" y="158" fill="#34d399" font-size="12" font-weight="600">Previous hash</text>
+  <text x="30" y="176" fill="#a1a1aa" font-size="11">Fingerprint of the block</text>
+  <text x="30" y="192" fill="#a1a1aa" font-size="11">before — this is the link.</text>
+
+  <line x1="290" y1="210" x2="250" y2="250" stroke="#3f3f46" stroke-width="1.2"/>
+  <circle cx="290" cy="210" r="3" fill="#1f9bff"/>
+  <text x="30" y="240" fill="#1f9bff" font-size="12" font-weight="600">Merkle root</text>
+  <text x="30" y="258" fill="#a1a1aa" font-size="11">One hash that fingerprints</text>
+  <text x="30" y="274" fill="#a1a1aa" font-size="11">every transaction at once.</text>
+
+  <!-- RIGHT callouts -->
+  <line x1="510" y1="250" x2="550" y2="150" stroke="#3f3f46" stroke-width="1.2"/>
+  <circle cx="510" cy="250" r="3" fill="#1f9bff"/>
+  <text x="560" y="140" fill="#1f9bff" font-size="12" font-weight="600">Timestamp</text>
+  <text x="560" y="158" fill="#a1a1aa" font-size="11">When the block was created.</text>
+
+  <line x1="510" y1="290" x2="550" y2="210" stroke="#3f3f46" stroke-width="1.2"/>
+  <circle cx="510" cy="290" r="3" fill="#fbbf24"/>
+  <text x="560" y="200" fill="#fbbf24" font-size="12" font-weight="600">Nonce</text>
+  <text x="560" y="218" fill="#a1a1aa" font-size="11">A tunable number — the star</text>
+  <text x="560" y="234" fill="#a1a1aa" font-size="11">of the next post (proof of work).</text>
+
+  <line x1="510" y1="360" x2="550" y2="330" stroke="#3f3f46" stroke-width="1.2"/>
+  <circle cx="510" cy="360" r="3" fill="#1f9bff"/>
+  <text x="560" y="320" fill="#1f9bff" font-size="12" font-weight="600">Transactions</text>
+  <text x="560" y="338" fill="#a1a1aa" font-size="11">The actual data the block</text>
+  <text x="560" y="354" fill="#a1a1aa" font-size="11">carries.</text>
+
+  <line x1="550" y1="479" x2="590" y2="455" stroke="#3f3f46" stroke-width="1.2"/>
+  <circle cx="550" cy="479" r="3" fill="#34d399"/>
+  <text x="560" y="420" fill="#34d399" font-size="12" font-weight="600">Block hash</text>
+  <text x="560" y="438" fill="#a1a1aa" font-size="11">SHA-256 of the header — this</text>
+  <text x="560" y="454" fill="#a1a1aa" font-size="11">block&apos;s own fingerprint. Change</text>
+  <text x="560" y="470" fill="#a1a1aa" font-size="11">any header field and it changes.</text>
+
+  <text x="400" y="540" text-anchor="middle" fill="#a1a1aa" font-size="12">Editing a transaction changes the merkle root → changes the header → changes the block hash.</text>
+  <text x="400" y="560" text-anchor="middle" fill="#52525b" font-size="11">That&apos;s the thread connecting the data at the bottom to the fingerprint that locks the whole block.</text>
+</svg>

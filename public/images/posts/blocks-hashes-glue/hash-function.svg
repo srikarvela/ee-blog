@@ -1,0 +1,51 @@
+<svg viewBox="0 0 800 470" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif">
+  <rect width="800" height="470" fill="#0a0a0a"/>
+  <text x="400" y="38" text-anchor="middle" fill="#fafafa" font-size="22" font-weight="600">A Hash Function Is a One-Way Fingerprint Machine</text>
+
+  <defs>
+    <marker id="ha" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto"><path d="M0,0 L6.5,3 L0,6 Z" fill="#1f9bff"/></marker>
+  </defs>
+
+  <!-- top: any input -> box -> fixed output -->
+  <rect x="40" y="78" width="150" height="54" rx="8" fill="#18181b" stroke="#3f3f46" stroke-width="1.5"/>
+  <text x="115" y="100" text-anchor="middle" fill="#a1a1aa" font-size="11">any input, any length</text>
+  <text x="115" y="120" text-anchor="middle" fill="#e4e4e7" font-size="12">"hello" · a file · a book</text>
+
+  <line x1="190" y1="105" x2="255" y2="105" stroke="#1f9bff" stroke-width="2.5" marker-end="url(#ha)"/>
+
+  <rect x="257" y="72" width="180" height="66" rx="10" fill="#18181b" stroke="#1f9bff" stroke-width="2"/>
+  <text x="347" y="100" text-anchor="middle" fill="#1f9bff" font-size="15" font-weight="700">SHA-256</text>
+  <text x="347" y="120" text-anchor="middle" fill="#71717a" font-size="10.5">deterministic · one-way</text>
+
+  <line x1="437" y1="105" x2="502" y2="105" stroke="#1f9bff" stroke-width="2.5" marker-end="url(#ha)"/>
+
+  <rect x="504" y="78" width="256" height="54" rx="8" fill="#18181b" stroke="#3f3f46" stroke-width="1.5"/>
+  <text x="632" y="100" text-anchor="middle" fill="#a1a1aa" font-size="11">always 256 bits — 64 hex chars</text>
+  <text x="632" y="120" text-anchor="middle" fill="#34d399" font-size="11" font-family="ui-monospace, monospace">2cf24dba5fb0a30e…9824</text>
+
+  <text x="400" y="170" text-anchor="middle" fill="#71717a" font-size="12">Same input always gives the same fingerprint. You can&apos;t run the machine backwards to recover the input.</text>
+
+  <!-- avalanche -->
+  <line x1="40" y1="200" x2="760" y2="200" stroke="#27272a" stroke-width="1" stroke-dasharray="2 6"/>
+  <text x="400" y="230" text-anchor="middle" fill="#fbbf24" font-size="15" font-weight="600">The Avalanche Effect</text>
+  <text x="400" y="252" text-anchor="middle" fill="#71717a" font-size="12">Change one tiny thing and the entire fingerprint scrambles — no resemblance at all.</text>
+
+  <!-- input hello -->
+  <rect x="80" y="278" width="200" height="40" rx="8" fill="#18181b" stroke="#3f3f46" stroke-width="1.5"/>
+  <text x="180" y="303" text-anchor="middle" fill="#e4e4e7" font-size="14" font-family="ui-monospace, monospace">"hello"</text>
+  <line x1="180" y1="318" x2="180" y2="345" stroke="#3f3f46" stroke-width="1.5" marker-end="url(#ha)"/>
+  <rect x="30" y="348" width="300" height="34" rx="6" fill="#0f0f10" stroke="#27272a" stroke-width="1"/>
+  <text x="180" y="370" text-anchor="middle" fill="#34d399" font-size="11.5" font-family="ui-monospace, monospace">2cf24dba5fb0a30e…938b9824</text>
+
+  <!-- input Hello -->
+  <rect x="520" y="278" width="200" height="40" rx="8" fill="#18181b" stroke="#3f3f46" stroke-width="1.5"/>
+  <text x="620" y="303" text-anchor="middle" fill="#e4e4e7" font-size="14" font-family="ui-monospace, monospace">"Hello"</text>
+  <text x="620" y="335" text-anchor="middle" fill="#fbbf24" font-size="10">just one capital letter</text>
+  <line x1="620" y1="336" x2="620" y2="345" stroke="#3f3f46" stroke-width="1.5" marker-end="url(#ha)"/>
+  <rect x="470" y="348" width="300" height="34" rx="6" fill="#0f0f10" stroke="#27272a" stroke-width="1"/>
+  <text x="620" y="370" text-anchor="middle" fill="#ef5350" font-size="11.5" font-family="ui-monospace, monospace">185f8db32271fe25…26381969</text>
+
+  <text x="400" y="332" text-anchor="middle" fill="#52525b" font-size="26">→</text>
+  <text x="400" y="420" text-anchor="middle" fill="#a1a1aa" font-size="12.5">Two nearly-identical inputs, two totally unrelated outputs. That sensitivity is the whole trick.</text>
+  <text x="400" y="440" text-anchor="middle" fill="#52525b" font-size="11">(real SHA-256 outputs, shortened in the middle to fit)</text>
+</svg>

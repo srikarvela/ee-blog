@@ -1,4 +1,4 @@
-export type Tag = "IEM" | "QUANT" | "VISION";
+export type Tag = "IEM" | "QUANT" | "VISION" | "CRYPTO";
 
 export type Post = {
   slug: string;
@@ -13,10 +13,19 @@ export const TAG_STYLES: Record<Tag, string> = {
   IEM: "border-yellow-400/40 bg-yellow-400/10 text-yellow-400",
   QUANT: "border-[#1f9bff]/50 bg-[#1f9bff]/10 text-[#1f9bff]",
   VISION: "border-[#c4b5fd]/50 bg-[#c4b5fd]/10 text-[#c4b5fd]",
+  CRYPTO: "border-[#f7931a]/50 bg-[#f7931a]/10 text-[#f7931a]",
 };
 
 // Newest first — order here is the display order.
 export const posts: Post[] = [
+  {
+    slug: "blocks-hashes-glue",
+    title: "Blocks, Hashes, and the Glue Between Them",
+    date: "Jul 2, 2026",
+    blurb:
+      "A diary entry, learning it live: cryptographic hashing (SHA-256), how each block fingerprints the last, and why that makes the chain tamper-evident.",
+    tags: ["CRYPTO"],
+  },
   {
     slug: "what-even-is-a-market",
     title: "What Even Is a Market?",

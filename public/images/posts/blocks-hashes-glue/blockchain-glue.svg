@@ -1,0 +1,88 @@
+<svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif">
+  <rect width="800" height="520" fill="#0a0a0a"/>
+  <text x="400" y="36" text-anchor="middle" fill="#fafafa" font-size="22" font-weight="600">Each Block Fingerprints the One Before It</text>
+
+  <defs>
+    <marker id="ga" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto"><path d="M0,0 L6.5,3 L0,6 Z" fill="#1f9bff"/></marker>
+    <marker id="gr" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto"><path d="M0,0 L6.5,3 L0,6 Z" fill="#ef5350"/></marker>
+  </defs>
+
+  <!-- ===== TOP: intact chain ===== -->
+  <text x="40" y="76" fill="#34d399" font-size="13" font-weight="600">An intact chain — every link matches</text>
+
+  <!-- Block 1 (genesis) -->
+  <g>
+    <rect x="40" y="90" width="220" height="130" rx="10" fill="#18181b" stroke="#3f3f46" stroke-width="1.5"/>
+    <text x="56" y="112" fill="#e4e4e7" font-size="13" font-weight="600">Block 1 · genesis</text>
+    <text x="56" y="136" fill="#71717a" font-size="10.5">prev hash</text>
+    <text x="56" y="152" fill="#52525b" font-size="11" font-family="ui-monospace, monospace">0000000000…0000</text>
+    <text x="56" y="174" fill="#71717a" font-size="10.5">data</text>
+    <text x="56" y="190" fill="#d4d4d8" font-size="11" font-family="ui-monospace, monospace">A pays B 5</text>
+    <text x="56" y="208" fill="#34d399" font-size="10.5">own hash</text>
+    <text x="150" y="208" fill="#34d399" font-size="11" font-family="ui-monospace, monospace">a1f9…c2</text>
+  </g>
+  <!-- Block 2 -->
+  <g>
+    <rect x="290" y="90" width="220" height="130" rx="10" fill="#18181b" stroke="#3f3f46" stroke-width="1.5"/>
+    <text x="306" y="112" fill="#e4e4e7" font-size="13" font-weight="600">Block 2</text>
+    <text x="306" y="136" fill="#71717a" font-size="10.5">prev hash</text>
+    <text x="306" y="152" fill="#34d399" font-size="11" font-family="ui-monospace, monospace">a1f9…c2</text>
+    <text x="306" y="174" fill="#71717a" font-size="10.5">data</text>
+    <text x="306" y="190" fill="#d4d4d8" font-size="11" font-family="ui-monospace, monospace">B pays C 3</text>
+    <text x="306" y="208" fill="#34d399" font-size="10.5">own hash</text>
+    <text x="400" y="208" fill="#34d399" font-size="11" font-family="ui-monospace, monospace">7b30…e8</text>
+  </g>
+  <!-- Block 3 -->
+  <g>
+    <rect x="540" y="90" width="220" height="130" rx="10" fill="#18181b" stroke="#3f3f46" stroke-width="1.5"/>
+    <text x="556" y="112" fill="#e4e4e7" font-size="13" font-weight="600">Block 3</text>
+    <text x="556" y="136" fill="#71717a" font-size="10.5">prev hash</text>
+    <text x="556" y="152" fill="#34d399" font-size="11" font-family="ui-monospace, monospace">7b30…e8</text>
+    <text x="556" y="174" fill="#71717a" font-size="10.5">data</text>
+    <text x="556" y="190" fill="#d4d4d8" font-size="11" font-family="ui-monospace, monospace">C pays A 1</text>
+    <text x="556" y="208" fill="#34d399" font-size="10.5">own hash</text>
+    <text x="650" y="208" fill="#34d399" font-size="11" font-family="ui-monospace, monospace">f42e…9b</text>
+  </g>
+  <!-- link arrows (own hash -> next prev hash) -->
+  <path d="M180 205 C 240 240 240 240 306 152" fill="none" stroke="#1f9bff" stroke-width="2" marker-end="url(#ga)"/>
+  <path d="M430 205 C 490 240 490 240 556 152" fill="none" stroke="#1f9bff" stroke-width="2" marker-end="url(#ga)"/>
+  <text x="400" y="252" text-anchor="middle" fill="#71717a" font-size="11">Each block copies the previous block&apos;s hash into its own &quot;prev hash&quot; field — that copy is the glue.</text>
+
+  <line x1="40" y1="278" x2="760" y2="278" stroke="#27272a" stroke-width="1" stroke-dasharray="2 6"/>
+
+  <!-- ===== BOTTOM: tampered chain ===== -->
+  <text x="40" y="308" fill="#ef5350" font-size="13" font-weight="600">Tamper with Block 2 → every link after it breaks</text>
+
+  <g>
+    <rect x="40" y="322" width="220" height="130" rx="10" fill="#18181b" stroke="#3f3f46" stroke-width="1.5"/>
+    <text x="56" y="344" fill="#e4e4e7" font-size="13" font-weight="600">Block 1 · genesis</text>
+    <text x="56" y="368" fill="#71717a" font-size="10.5">data</text>
+    <text x="56" y="384" fill="#d4d4d8" font-size="11" font-family="ui-monospace, monospace">A pays B 5</text>
+    <text x="56" y="422" fill="#34d399" font-size="10.5">own hash</text>
+    <text x="150" y="422" fill="#34d399" font-size="11" font-family="ui-monospace, monospace">a1f9…c2</text>
+  </g>
+  <!-- tampered block 2 -->
+  <g>
+    <rect x="290" y="322" width="220" height="130" rx="10" fill="#2a1416" stroke="#ef5350" stroke-width="2"/>
+    <text x="306" y="344" fill="#ef5350" font-size="13" font-weight="600">Block 2 · edited</text>
+    <text x="306" y="368" fill="#71717a" font-size="10.5">data (changed!)</text>
+    <text x="306" y="384" fill="#ef5350" font-size="11" font-family="ui-monospace, monospace">B pays C 3000</text>
+    <text x="306" y="406" fill="#71717a" font-size="10.5">prev hash ✓ still a1f9…c2</text>
+    <text x="306" y="424" fill="#ef5350" font-size="10.5">own hash</text>
+    <text x="400" y="424" fill="#ef5350" font-size="11" font-family="ui-monospace, monospace">c0de…11</text>
+  </g>
+  <!-- block 3 unchanged, now mismatched -->
+  <g>
+    <rect x="540" y="322" width="220" height="130" rx="10" fill="#18181b" stroke="#3f3f46" stroke-width="1.5"/>
+    <text x="556" y="344" fill="#e4e4e7" font-size="13" font-weight="600">Block 3</text>
+    <text x="556" y="368" fill="#71717a" font-size="10.5">prev hash (expects)</text>
+    <text x="556" y="384" fill="#fbbf24" font-size="11" font-family="ui-monospace, monospace">7b30…e8</text>
+    <text x="556" y="424" fill="#71717a" font-size="10.5">but Block 2 now says c0de…11</text>
+  </g>
+  <path d="M180 419 C 240 452 240 452 306 384" fill="none" stroke="#34d399" stroke-width="2" marker-end="url(#ga)"/>
+  <!-- broken link -->
+  <path d="M430 419 C 470 448 500 448 556 388" fill="none" stroke="#ef5350" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#gr)"/>
+  <text x="493" y="470" text-anchor="middle" fill="#ef5350" font-size="16" font-weight="700">✗ mismatch</text>
+
+  <text x="400" y="502" text-anchor="middle" fill="#a1a1aa" font-size="12">Editing old data changes that block&apos;s hash, so the next block&apos;s stored &quot;prev hash&quot; no longer matches. The forgery is obvious.</text>
+</svg>
