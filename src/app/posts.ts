@@ -19,6 +19,14 @@ export const TAG_STYLES: Record<Tag, string> = {
 // Newest first — order here is the display order.
 export const posts: Post[] = [
   {
+    slug: "what-does-quant-mean",
+    title: "What Does “Quant” Even Mean?",
+    date: "Jul 14, 2026",
+    blurb:
+      "Journaling it live: systematic vs. discretionary trading, signals, strategies, and why some firms trade with code instead of gut.",
+    tags: ["QUANT"],
+  },
+  {
     slug: "the-order-book",
     title: "The Order Book: Where Trades Actually Match",
     date: "Jul 7, 2026",

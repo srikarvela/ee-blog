@@ -1,0 +1,48 @@
+<svg viewBox="0 0 800 470" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif">
+  <rect width="800" height="470" fill="#0a0a0a"/>
+  <text x="400" y="36" text-anchor="middle" fill="#fafafa" font-size="22" font-weight="600">Two Ways to Decide a Trade</text>
+
+  <line x1="400" y1="60" x2="400" y2="440" stroke="#27272a" stroke-width="1.5" stroke-dasharray="2 6"/>
+
+  <!-- LEFT: Discretionary -->
+  <text x="200" y="86" text-anchor="middle" fill="#fbbf24" font-size="15" font-weight="600">Discretionary</text>
+  <text x="200" y="106" text-anchor="middle" fill="#a1a1aa" font-size="12">A human decides each trade.</text>
+
+  <!-- head icon -->
+  <circle cx="200" cy="158" r="26" fill="#18181b" stroke="#fbbf24" stroke-width="2"/>
+  <path d="M188 158 q6 -12 12 0 q6 12 12 0" fill="none" stroke="#fbbf24" stroke-width="2"/>
+  <circle cx="192" cy="152" r="2" fill="#fbbf24"/>
+  <circle cx="208" cy="152" r="2" fill="#fbbf24"/>
+
+  <g font-size="12.5" fill="#d4d4d8">
+    <text x="70" y="220">Driven by judgment, experience,</text>
+    <text x="70" y="240">news, and gut feel.</text>
+  </g>
+  <g font-size="12">
+    <text x="70" y="278" fill="#22c55e">+ adapts instantly to new situations</text>
+    <text x="70" y="300" fill="#22c55e">+ great with context machines miss</text>
+    <text x="70" y="330" fill="#ef5350">− emotional, inconsistent</text>
+    <text x="70" y="352" fill="#ef5350">− hard to scale or test</text>
+  </g>
+
+  <!-- RIGHT: Systematic -->
+  <text x="600" y="86" text-anchor="middle" fill="#1f9bff" font-size="15" font-weight="600">Systematic (Quant)</text>
+  <text x="600" y="106" text-anchor="middle" fill="#a1a1aa" font-size="12">Rules decided in advance, run by code.</text>
+
+  <!-- code icon -->
+  <rect x="574" y="132" width="52" height="52" rx="8" fill="#18181b" stroke="#1f9bff" stroke-width="2"/>
+  <text x="600" y="166" text-anchor="middle" fill="#1f9bff" font-size="18" font-family="ui-monospace, monospace">&lt;/&gt;</text>
+
+  <g font-size="12.5" fill="#d4d4d8">
+    <text x="450" y="220">The same logic, applied the exact</text>
+    <text x="450" y="240">same way, every single time.</text>
+  </g>
+  <g font-size="12">
+    <text x="450" y="278" fill="#22c55e">+ repeatable and unemotional</text>
+    <text x="450" y="300" fill="#22c55e">+ scales to thousands of trades</text>
+    <text x="450" y="322" fill="#22c55e">+ testable on historical data</text>
+    <text x="450" y="352" fill="#ef5350">− only as good as its rules</text>
+  </g>
+
+  <text x="400" y="420" text-anchor="middle" fill="#52525b" font-size="12.5">&quot;Quant&quot; is the systematic side: replacing gut calls with rules, data, and code.</text>
+</svg>

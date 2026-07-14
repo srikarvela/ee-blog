@@ -1,0 +1,65 @@
+<svg viewBox="0 0 800 470" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif">
+  <rect width="800" height="470" fill="#0a0a0a"/>
+  <text x="400" y="34" text-anchor="middle" fill="#fafafa" font-size="22" font-weight="600">What a Signal Actually Is</text>
+  <text x="400" y="56" text-anchor="middle" fill="#71717a" font-size="12.5">A classic starter signal: a fast average crossing a slow average.</text>
+
+  <!-- chart frame -->
+  <rect x="60" y="78" width="680" height="230" rx="10" fill="#0f0f10" stroke="#27272a" stroke-width="1.5"/>
+  <line x1="90" y1="288" x2="720" y2="288" stroke="#3f3f46" stroke-width="1.2"/>
+  <text x="90" y="304" fill="#52525b" font-size="10">time →</text>
+  <text x="72" y="96" fill="#52525b" font-size="10">price</text>
+
+  <!-- price line (noisy) -->
+  <polyline fill="none" stroke="#52525b" stroke-width="1.6"
+    points="90,240 130,232 170,246 210,220 250,228 290,200 330,210 370,180 410,196 450,168 490,150 530,166 570,150 610,170 650,158 690,176 720,164"/>
+  <!-- slow MA (smooth) -->
+  <polyline fill="none" stroke="#a1a1aa" stroke-width="2"
+    points="90,236 170,234 250,226 330,214 410,200 490,184 570,172 650,166 720,168"/>
+  <!-- fast MA (reacts quicker) -->
+  <polyline fill="none" stroke="#1f9bff" stroke-width="2.2"
+    points="90,240 170,242 250,224 330,206 410,190 490,164 570,158 650,160 720,166"/>
+
+  <!-- crossover markers -->
+  <circle cx="446" cy="196" r="6" fill="#22c55e"/>
+  <text x="446" y="176" text-anchor="middle" fill="#22c55e" font-size="11">▲ BUY</text>
+  <text x="446" y="332" text-anchor="middle" fill="#22c55e" font-size="10">fast crosses ABOVE slow</text>
+
+  <circle cx="632" cy="160" r="6" fill="#ef5350"/>
+  <text x="632" y="140" text-anchor="middle" fill="#ef5350" font-size="11">▼ SELL</text>
+  <text x="632" y="332" text-anchor="middle" fill="#ef5350" font-size="10">fast crosses BELOW slow</text>
+
+  <!-- legend -->
+  <line x1="520" y1="96" x2="540" y2="96" stroke="#52525b" stroke-width="1.6"/>
+  <text x="546" y="100" fill="#a1a1aa" font-size="10">price</text>
+  <line x1="590" y1="96" x2="610" y2="96" stroke="#a1a1aa" stroke-width="2"/>
+  <text x="616" y="100" fill="#a1a1aa" font-size="10">slow avg</text>
+  <line x1="672" y1="96" x2="692" y2="96" stroke="#1f9bff" stroke-width="2.2"/>
+  <text x="698" y="100" fill="#a1a1aa" font-size="10">fast avg</text>
+
+  <!-- flow: data -> signal -> rule -> trade -->
+  <g font-size="12">
+    <rect x="60" y="360" width="140" height="54" rx="8" fill="#18181b" stroke="#3f3f46" stroke-width="1.5"/>
+    <text x="130" y="384" text-anchor="middle" fill="#e4e4e7" font-weight="600">Data</text>
+    <text x="130" y="402" text-anchor="middle" fill="#71717a" font-size="10">raw prices</text>
+
+    <rect x="230" y="360" width="150" height="54" rx="8" fill="#18181b" stroke="#1f9bff" stroke-width="1.5"/>
+    <text x="305" y="384" text-anchor="middle" fill="#e4e4e7" font-weight="600">Signal</text>
+    <text x="305" y="402" text-anchor="middle" fill="#71717a" font-size="10">fast − slow average</text>
+
+    <rect x="410" y="360" width="150" height="54" rx="8" fill="#18181b" stroke="#3f3f46" stroke-width="1.5"/>
+    <text x="485" y="384" text-anchor="middle" fill="#e4e4e7" font-weight="600">Rule</text>
+    <text x="485" y="402" text-anchor="middle" fill="#71717a" font-size="10">cross up → buy</text>
+
+    <rect x="590" y="360" width="150" height="54" rx="8" fill="#18181b" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="665" y="384" text-anchor="middle" fill="#e4e4e7" font-weight="600">Trade</text>
+    <text x="665" y="402" text-anchor="middle" fill="#71717a" font-size="10">send the order</text>
+  </g>
+  <g stroke="#52525b" stroke-width="2">
+    <line x1="200" y1="387" x2="226" y2="387" marker-end="url(#qa)"/>
+    <line x1="380" y1="387" x2="406" y2="387" marker-end="url(#qa)"/>
+    <line x1="560" y1="387" x2="586" y2="387" marker-end="url(#qa)"/>
+  </g>
+  <defs><marker id="qa" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto"><path d="M0,0 L6.5,3 L0,6 Z" fill="#52525b"/></marker></defs>
+
+  <text x="400" y="446" text-anchor="middle" fill="#52525b" font-size="11.5">A signal is just a number, computed from data, that leans the decision one way or the other.</text>
+</svg>
